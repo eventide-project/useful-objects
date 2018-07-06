@@ -6,7 +6,6 @@ A useful object:
 
 - Is usable immediately upon initialization without any nil reference errors resulting from uninitialized dependencies (eg: `NoMethodError, undefined method for nil:NilClass`)
 - Doesn't have any logic in its initializer other than assigning the value of initializer parameters to the object's instance variables
-- Formalizes the criteria for choosing the use of initializer arguments versus setters
 - Formalizes the difference between initializer arguments and setters, and the circumstances when one is used rather than the other
 - Doesn't require a foreign mechanism outside of the class's own namespace (including inner namespaces) to initialize it and its dependencies (a.k.a.: an _Inversion of Control container_, etc)
 - Doesn't invite the passing nils or _dummy_ values to its initializer for the purposes of setting up the object for testing
