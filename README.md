@@ -201,8 +201,6 @@ Behavioral objects have _actuators_. The objects' classes also have actuators. T
 
 Once an object is instantiated, it is ready to be actuated, ie: to have its `call` method invoked. As a convenience, the class also provides a `call` method. The _class actuator_ constructs the object, and invokes the instance actuator.
 
-A class actuator, like a class constructor,
-
 ## Elaborated Example
 
 The above example elaborated with actuators:
