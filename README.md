@@ -100,7 +100,7 @@ The `some_dependency` can be _optionally_ set to an _operational_ instance of `S
 
 ## Optional Dependencies and Default Null Object Substitutes
 
-By default, the `some_dependency` will be assigned a _strong_ null object that is constructed to conform to the `SomeDependency` interface.
+By default, the `some_dependency` will be assigned a _strict_ null object that is constructed to conform to the `SomeDependency` interface.
 
 A direct invocation of the initializer will not leave the `some_dependency` attribute uninitialized as `nil`.
 
@@ -132,9 +132,9 @@ The use of the term _configuration_ here refers to the configuration of an assem
 
 ## Configuring Dependencies
 
-The job of configuring _actual_ dependencies falls to the class's _constructor_ (or, _factory method_), implemented above as the `build` method.
+The job of configuring _operational_ dependencies falls to the class's _constructor_ (or, _factory method_), implemented above as the `build` method.
 
-Furthermore, it's the job of the dependency's class to decide how the dependency should be constructed, and how it should be assigned to the object that has the dependency.
+Furthermore, it's the job of the dependency's class to decide how the dependency should be constructed, and how it should be assigned to the object that depends on it.
 
 This line of code from the example above is where configuration is happening:
 
