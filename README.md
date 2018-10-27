@@ -59,7 +59,7 @@ class Something
   end
 
   def self.build(some_object)
-    new(some_object.some_value, some_object.some_other_value) do |instance|
+    new(some_object.some_value, some_object.some_other_value).tap do |instance|
       SomeDependency.configure instance
     end
   end
@@ -218,7 +218,7 @@ class Something
   end
 
   def self.build(some_object)
-    new(some_object.some_value, some_object.some_other_value) do |instance|
+    new(some_object.some_value, some_object.some_other_value).tap do |instance|
       SomeDependency.configure instance
     end
   end
