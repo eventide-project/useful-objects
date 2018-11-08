@@ -157,7 +157,7 @@ end
 
 This pattern is also an example of _Tell, Don't Ask_, which is a helpful pattern in preserving encapsulation, which in turn help limit the effects of some of the more harmful kinds of coupling.
 
-In effect, _tell_ the dependency's class to get an instance of itself (in whichever why it does that, which is not the business of the user of the class), and to assign it back to the instance of the object that has the dependency.
+In effect, _tell_ the dependency's class to get an instance of itself (in whichever way it does that, which is not the business of the user of the class), and to assign it back to the instance of the object that has the dependency.
 
 While this property might seem negligible, spread over the breadth of an application or system, and over the weeks, months, or years of a work on a system of objects, the cumulative effects of uncontrolled coupling accounts for much of the productivity slow down and increased costs that teams commonly experience.
 
@@ -261,7 +261,7 @@ If the execution of an object is important enough to need to verify the executio
 
 Transparency is not _of_ tests. It is _used by_ tests. Transparency is of design.
 
-Said otherwise: the presence of test doubles (mocks, stubs, spies) signifies that an object's deign itself is not accounting for the use cases that it is engaged in. The object is being asked to do things that it's not designed for.
+Said otherwise: the presence of test doubles (mocks, stubs, spies) signifies that an object's design itself is not accounting for the use cases that it is engaged in. The object is being asked to do things that it's not designed for.
 
 There's no doubt that a Ruby object can be brute-forced into such a thing, but that doesn't solve the problem of a class expressing its uses in its own code.
 
