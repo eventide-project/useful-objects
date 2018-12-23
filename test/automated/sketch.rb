@@ -23,7 +23,7 @@ assert(sink.recorded_something_done?)
 # - - -
 # Concrete dependency and telemetry
 
-something = UsefulObjects::Something.new some_value, some_other_value
+something = UsefulObjects::Something.new(some_value, some_other_value)
 
 sink = SomeDependency.register_telemetry_sink(something.some_dependency)
 something.()
