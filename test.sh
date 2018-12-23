@@ -1,0 +1,1 @@
+ruby test/automated.rb

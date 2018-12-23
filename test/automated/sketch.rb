@@ -1,4 +1,4 @@
-require_relative 'bench_init'
+require_relative './automated_init'
 require 'ostruct'
 
 some_value = 'some value'
