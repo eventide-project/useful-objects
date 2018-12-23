@@ -92,7 +92,7 @@ The class constructor provides a _convenience interface_. It's the interface use
 
 ## Secondary, Optional Dependencies
 
-The `some_dependency` dependency is not an appropriate initializer argument. It's a _collaborator_ dependency ( a better term would be _service_ dependency, but that term is too overloaded to be helpful).
+The `some_dependency` dependency is not an appropriate initializer argument. It's a _collaborator_ dependency (a better term would be _service_ dependency, but that term is too overloaded to be helpful).
 
 An instance of the `Something` class needs the `some_dependency` in order to fulfill its obligations at runtime, but it is not necessary to provide the _operational_ implementation of the dependency in all cases (any substitute implementation - due to substitutability - is also a permissible value).
 
