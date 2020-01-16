@@ -504,7 +504,7 @@ If you reduce duplication of code patterns indiscriminately, you'll end up creat
 
 In effect, the abstractions created by the pre-mature boilerplate reduction can cause the use of the programming language to diverge so far from the language's own foundations that learning the framework becomes an exercise in effectively learning a new language. This in itself is an example of the kind of _special variation_ that must be rigorously controlled rather than automatically indulged.
 
-While having to code boilerplate code can seen tedious and annoying, that's all it is. The avoidance of tedium is not a sufficient risk to the design's structural qualities to warrant its indulgence reflexively.
+While having to code boilerplate code can seem tedious and annoying, that's all it is. The avoidance of tedium is not a sufficient risk to the design's structural qualities to warrant its indulgence reflexively.
 
 Necessary, irreducible boilerplate is just one of those things that we need to face as programmers with increased patience and a shift in focus from short term gains to long-term sustainability and continuity.
 
