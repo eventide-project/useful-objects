@@ -88,7 +88,7 @@ Any destructuring of more complex objects is provided by a factory method, or _c
 
 By the time the initializer is invoked, the exact data needed by the object in order to do its work is supplied to the initializer. The initializer is not required to do any other work other than capturing the data as the object's instance variables.
 
-The class constructor provides a _convenience interface_. It's the interface used to make invoking the initializer easier for the developer by not requiring that all of the initializer's individual arguments.
+The class constructor provides a _convenience interface_. It's the interface used to make invoking the initializer easier for the developer by not requiring all of the initializer's individual arguments.
 
 ## Secondary, Optional Dependencies
 
@@ -96,7 +96,7 @@ The `some_dependency` dependency is not an appropriate initializer argument. It'
 
 An instance of the `Something` class needs the `some_dependency` in order to fulfill its obligations at runtime, but it is not necessary to provide the _operational_ implementation of the dependency in all cases (any substitute implementation - due to substitutability - is also a permissible value).
 
-The `some_dependency` can be _optionally_ set to an _operational_ instance of `SomeDependency`, or to a substitute
+The `some_dependency` can be _optionally_ set to an _operational_ instance of `SomeDependency`, or to a substitute.
 
 ## Optional Dependencies and Default Null Object Substitutes
 
@@ -500,11 +500,11 @@ Rather than reduce mere boilerplate code, look for variations on patterns and se
 
 Any programmer at any level can reduce perceived duplication. It's not difficult, and it's not an unassailable goal of design - except when it does not create countervailing problems. And that assessment is a matter of a judgment call that has to take into effect the unique conditions of the particular system being worked.
 
-If you reduce duplication of code patterns indiscriminately, you'll end up creating a _framework_ from which critical business logic cannot be extricated when the framework becomes too cumbersome to continue justifying its use. While not _all_ frameworks end up facing this fate, it's far more common than not, as framework developers struggle to maintain adoption and relevance as time goes passes by adding more features and specializations through abstraction rather than by extension (ie: plain old _vendor lock-in_).
+If you reduce duplication of code patterns indiscriminately, you'll end up creating a _framework_ from which critical business logic cannot be extricated when the framework becomes too cumbersome to continue justifying its use. While not _all_ frameworks end up facing this fate, it's far more common than not, as framework developers struggle to maintain adoption and relevance as time passes by adding more features and specializations through abstraction rather than by extension (ie: plain old _vendor lock-in_).
 
 In effect, the abstractions created by the pre-mature boilerplate reduction can cause the use of the programming language to diverge so far from the language's own foundations that learning the framework becomes an exercise in effectively learning a new language. This in itself is an example of the kind of _special variation_ that must be rigorously controlled rather than automatically indulged.
 
-While having to code boilerplate code can seem tedious and annoying, that's all it is. The avoidance of tedium is not a sufficient risk to the design's structural qualities to warrant its indulgence reflexively.
+While having to write boilerplate code can seem tedious and annoying, that's all it is. The avoidance of tedium is not a sufficient risk to the design's structural qualities to warrant its indulgence reflexively.
 
 Necessary, irreducible boilerplate is just one of those things that we need to face as programmers with increased patience and a shift in focus from short term gains to long-term sustainability and continuity.
 
