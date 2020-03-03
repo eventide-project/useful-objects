@@ -88,7 +88,7 @@ Any destructuring of more complex objects is provided by a factory method, or _c
 
 By the time the initializer is invoked, the exact data needed by the object in order to do its work is supplied to the initializer. The initializer is not required to do any other work other than capturing the data as the object's instance variables.
 
-The class constructor provides a _convenience interface_. It's the interface used to make invoking the initializer easier for the developer by not requiring that all of the initializer's individual arguments.
+The class constructor provides a _convenience interface_. It's the interface used to make invoking the initializer easier for the developer by not requiring all of the initializer's individual arguments.
 
 ## Secondary, Optional Dependencies
 
