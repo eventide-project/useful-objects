@@ -36,6 +36,8 @@ There is no _real_ instance of a dependency versus a _fake_ instance. These pers
 
 Substitutability guarantees that all implementations of an interface that respect the interface's contract and intended semantics are no more valuable than any other implementation of the interface, and no less _real_ than any other. All substitutes are _real_ substitutes by the very nature of substitutability.
 
+Leveraging _substitutability_, ensure that an object's dependencies are initialized to an implementation of the dependency's interface immediately upon instantiation of the object.
+
 ## Null Object Dependencies and Useful Objects
 
 The most basic safe and inert substitute for a dependency is a null object.
