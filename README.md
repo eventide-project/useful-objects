@@ -1,5 +1,7 @@
 # The Doctrine of Useful Objects
 
+An object must be _useful_ immediately upon instantiation of the object. No dependencies of an object should ever be allowed to be uninitialized. If any use of any of an object's dependencies results in a nil reference exception, then the object is not useful.
+
 ## Overview
 
 A useful object:
@@ -28,9 +30,9 @@ This repository includes an example implementation.
 
 A dependency has an interface. An object that conforms to that interface (and its semantics) is substitutable for the dependency. That object is a _substitute_.
 
-There is no notion of _primary_ or _secondary_ substitutes. All values that can be assigned to a dependency attribute are substitutable for each other. No single substitute has precedence over the other.
+There is no notion of _primary_ or _secondary_ substitutes. All values that can be assigned to a dependency attribute are substitutable for each other. No single substitute is considered more real than any other.
 
-There is no _real_ instance of a dependency versus a _fake_ instance. These perspectives are purely circumstantial, and should be drummed out of the designer's mind as quickly as they threaten to alight.
+There is no _real_ instance of a dependency versus a _fake_ instance. These perspectives are purely circumstantial, and should be drummed out of the designer's mind as quickly as possible.
 
 Substitutability guarantees that all implementations of an interface that respect the interface's contract and intended semantics are no more valuable than any other implementation of the interface, and no less _real_ than any other. All substitutes are _real_ substitutes by the very nature of substitutability.
 
