@@ -64,7 +64,7 @@ class Something
 
   def self.build(some_object)
     new(some_object.some_value, some_object.some_other_value).tap do |instance|
-      SomeDependency.configure instance
+      SomeDependency.configure(instance)
     end
   end
 end
@@ -181,7 +181,7 @@ Be warned, however, that doing this makes the class more obscure to first-glance
 
 It's arguable that pursuing this minimal implementation reduces the usability of this object even while the mechanical details of the boilerplate are reduced.
 
-## Objects are _Behaviors_ First, and Data Second
+## Objects are Behaviors First, and Data Second
 
 Most objects in your system should be behavioral. This is a fundamental tenet of Object-Orientation, and really of most programming paradigms.
 
