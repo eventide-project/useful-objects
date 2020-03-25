@@ -506,7 +506,7 @@ Any programmer at any level can reduce perceived duplication. It's not difficult
 
 If you reduce duplication of code patterns indiscriminately, you'll end up creating a _framework_ from which critical business logic cannot be extricated when the framework becomes too cumbersome to continue justifying its use. While not _all_ frameworks end up facing this fate, it's far more common than not, as framework developers struggle to maintain adoption and relevance as time passes by adding more features and specializations through abstraction rather than by extension (ie: plain old _vendor lock-in_).
 
-In effect, the abstractions created by the pre-mature boilerplate reduction can cause the use of the programming language to diverge so far from the language's own foundations that learning the framework becomes an exercise in effectively learning a new language. This in itself is an example of the kind of _special variation_ that must be rigorously controlled rather than automatically indulged.
+In effect, the abstractions created by the premature boilerplate reduction can cause the use of the programming language to diverge so far from the language's own foundations that learning the framework becomes an exercise in effectively learning a new language. This in itself is an example of the kind of _special variation_ that must be rigorously controlled rather than automatically indulged.
 
 While having to write boilerplate code can seem tedious and annoying, that's all it is. The avoidance of tedium is not a sufficient risk to the design's structural qualities to warrant its indulgence reflexively.
 
