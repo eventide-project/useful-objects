@@ -346,7 +346,7 @@ end
 
 In addition to having dependencies being initialized to null object implementations, substitutes should also provide a means to override the inert null object with a concrete implementation of a substitute (or to specialize the null object).
 
-Here's an example of a dependency with a concrete substitute substitute implementation (though a naive one that doesn't demonstrate a realistic case):
+Here's an example of a dependency with a concrete substitute implementation (though a naive one that doesn't demonstrate a realistic case):
 
 ```ruby
 class SomeDependency
