@@ -143,7 +143,7 @@ Furthermore, it's the job of the dependency's class to decide how the dependency
 This line of code from the example above is where configuration is happening:
 
 ```ruby
-SomeDependency.configure instance
+SomeDependency.configure(instance)
 ```
 
 This form allows `SomeDependency` to decide for itself how it should be constructed and to be assigned.
@@ -223,7 +223,7 @@ class Something
 
   def self.build(some_object)
     new(some_object.some_value, some_object.some_other_value).tap do |instance|
-      SomeDependency.configure instance
+      SomeDependency.configure(instance)
     end
   end
 
@@ -298,8 +298,8 @@ module UsefulObjects
 
     def self.build(some_object)
       new(some_object.some_value, some_object.some_other_value).tap do |instance|
-        SomeDependency.configure instance
-        ::Telemetry.configure instance
+        SomeDependency.configure(instance)
+        ::Telemetry.configure(instance)
       end
     end
 
@@ -313,7 +313,7 @@ module UsefulObjects
     end
 
     def do_something
-      telemetry.record :something_done, some_value
+      telemetry.record(:something_done, some_value)
       do_something_else
     end
 
@@ -335,7 +335,7 @@ module UsefulObjects
 
     def self.register_telemetry_sink(something)
       sink = Telemetry.sink
-      something.telemetry.register sink
+      something.telemetry.register(sink)
       sink
     end
   end
@@ -389,7 +389,7 @@ class SomeDependency
 
   configure :some_dependency do
     new.tap do |instance|
-      ::Telemetry.configure instance
+      ::Telemetry.configure(instance)
     end
   end
 
@@ -415,7 +415,7 @@ class SomeDependency
 
   def self.register_telemetry_sink(something)
     sink = Telemetry.sink
-    something.telemetry.register sink
+    something.telemetry.register(sink)
     sink
   end
 
@@ -429,12 +429,12 @@ class SomeDependency
 
       def self.build
         new.tap do |instance|
-          ::Telemetry.configure instance
+          ::Telemetry.configure(instance)
         end
       end
 
       def do_something
-        telemetry.record :something_done
+        telemetry.record(:something_done)
         pretend_to_do_some_destructive_side_effect
       end
 
