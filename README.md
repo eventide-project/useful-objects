@@ -460,7 +460,7 @@ The object interface is _correct_. The class interface is an _ease of use_ provi
 
 The class interface insulates the object interface from the encroachment of imprecision that comes from a developer's desire to have ease of use.
 
-For example, it's common (while imprecise and _incorrect_) for ruby developers to pass a hash of values to an initializer, and then copy the hash's values to the instantiated object's instance variables. This would be an example of an initializer that does not offer the precision appropriate to an instance interface.
+For example, it's common (while imprecise and _incorrect_) for Ruby developers to pass a hash of values to an initializer, and then copy the hash's values to the instantiated object's instance variables. This would be an example of an initializer that does not offer the precision appropriate to an instance interface.
 
 Instead, an initializer should only receive exactly the data that will be assigned to the object's instance variables, without any _destructuring_ of more complex objects, like a hash.
 
