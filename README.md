@@ -143,7 +143,7 @@ Furthermore, it's the job of the dependency's class to decide how the dependency
 This line of code from the example above is where configuration is happening:
 
 ```ruby
-SomeDependency.configure instance
+SomeDependency.configure(instance)
 ```
 
 This form allows `SomeDependency` to decide for itself how it should be constructed and to be assigned.
@@ -223,7 +223,7 @@ class Something
 
   def self.build(some_object)
     new(some_object.some_value, some_object.some_other_value).tap do |instance|
-      SomeDependency.configure instance
+      SomeDependency.configure(instance)
     end
   end
 
@@ -298,8 +298,8 @@ module UsefulObjects
 
     def self.build(some_object)
       new(some_object.some_value, some_object.some_other_value).tap do |instance|
-        SomeDependency.configure instance
-        ::Telemetry.configure instance
+        SomeDependency.configure(instance)
+        ::Telemetry.configure(instance)
       end
     end
 
@@ -313,7 +313,7 @@ module UsefulObjects
     end
 
     def do_something
-      telemetry.record :something_done, some_value
+      telemetry.record(:something_done, some_value)
       do_something_else
     end
 
@@ -335,7 +335,7 @@ module UsefulObjects
 
     def self.register_telemetry_sink(something)
       sink = Telemetry.sink
-      something.telemetry.register sink
+      something.telemetry.register(sink)
       sink
     end
   end
@@ -346,7 +346,7 @@ end
 
 In addition to having dependencies being initialized to null object implementations, substitutes should also provide a means to override the inert null object with a concrete implementation of a substitute (or to specialize the null object).
 
-Here's an example of a dependency with a concrete substitute substitute implementation (though a naive one that doesn't demonstrate a realistic case):
+Here's an example of a dependency with a concrete substitute implementation (though a naive one that doesn't demonstrate a realistic case):
 
 ```ruby
 class SomeDependency
@@ -389,7 +389,7 @@ class SomeDependency
 
   configure :some_dependency do
     new.tap do |instance|
-      ::Telemetry.configure instance
+      ::Telemetry.configure(instance)
     end
   end
 
@@ -415,7 +415,7 @@ class SomeDependency
 
   def self.register_telemetry_sink(something)
     sink = Telemetry.sink
-    something.telemetry.register sink
+    something.telemetry.register(sink)
     sink
   end
 
@@ -429,12 +429,12 @@ class SomeDependency
 
       def self.build
         new.tap do |instance|
-          ::Telemetry.configure instance
+          ::Telemetry.configure(instance)
         end
       end
 
       def do_something
-        telemetry.record :something_done
+        telemetry.record(:something_done)
         pretend_to_do_some_destructive_side_effect
       end
 
@@ -460,7 +460,7 @@ The object interface is _correct_. The class interface is an _ease of use_ provi
 
 The class interface insulates the object interface from the encroachment of imprecision that comes from a developer's desire to have ease of use.
 
-For example, it's common (while imprecise and _incorrect_) for ruby developers to pass a hash of values to an initializer, and then copy the hash's values to the instantiated object's instance variables. This would be an example of an initializer that does not offer the precision appropriate to an instance interface.
+For example, it's common (while imprecise and _incorrect_) for Ruby developers to pass a hash of values to an initializer, and then copy the hash's values to the instantiated object's instance variables. This would be an example of an initializer that does not offer the precision appropriate to an instance interface.
 
 Instead, an initializer should only receive exactly the data that will be assigned to the object's instance variables, without any _destructuring_ of more complex objects, like a hash.
 
