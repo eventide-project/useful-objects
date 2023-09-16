@@ -7,12 +7,14 @@ An object must be _useful_ immediately upon instantiation of the object. No depe
 A useful object:
 
 - Is usable immediately upon initialization without any nil reference errors resulting from uninitialized dependencies (eg: `NoMethodError, undefined method for nil:NilClass`)
+- Is behavioral, with state that only directly supports the behavior
+- Has a single purpose
 - Doesn't have any logic in its initializer other than assigning the value of initializer parameters to the object's instance variables
 - Formalizes the difference between initializer arguments and setters, and the circumstances when one is used rather than the other
 - Doesn't require a foreign mechanism outside of the class's own namespace (including inner namespaces) to initialize it and its dependencies (a.k.a.: an _Inversion of Control container_, etc)
 - Doesn't invite the passing nils or _dummy_ values to its initializer for the purposes of setting up the object for testing
+- Relies on telemetry rather than test doubles (mocks, spies) to inspect an object's execution
 - Doesn't rely on test doubles (stubs) to disengage dependencies that would cause undesirable side effects while exercising or otherwise testing it
-- Doesn't rely on test doubles (mocks, spies) to be used to inspect an object's execution path
 
 ## Implications
 
