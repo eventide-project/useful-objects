@@ -110,7 +110,7 @@ By default, the `some_dependency` will be assigned a _strict_ null object that i
 
 A direct invocation of the initializer will not leave the `some_dependency` attribute uninitialized as `nil`.
 
-The dependency will be assigned the default null object substitute that is constructed dynamically as a function of the `dependency` macro.
+The dependency will be assigned the default null object substitute that is constructed dynamically as a function of the `dependency` macro. The default null object may be specialized by implementing a [concrete substitute](#concrete-substitutes).
 
 The value of `some_dependency` that is needed in live operation (the _operational_ implementation) is provided by the `build` constructor (factory) method.
 
